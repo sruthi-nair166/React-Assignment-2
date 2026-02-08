@@ -1,7 +1,7 @@
 function AboutSection() {
   return (
     <div className="h-[90dvh] flex flex-col gap-10 p-20">
-      <h1 className="text-2xl">ABOUT</h1>
+      <h1 className="text-2xl tracking-widest font-medium">ABOUT</h1>
 
       <div className="grid grid-cols-[2fr_1fr] h-full">
         <p className="item-start text-4xl">
