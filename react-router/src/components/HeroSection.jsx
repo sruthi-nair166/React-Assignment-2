@@ -1,7 +1,7 @@
 function HeroSection() {
   return (
     <div className="h-[90dvh] flex flex-col text-center justify-center items-center gap-10">
-      <h1 className="text-5xl w-3/4 mb-4">
+      <h1 className="text-5xl w-3/4 mb-5">
         Welcome to the Corporate Portal. Manage your team and view department
         analytics.
       </h1>

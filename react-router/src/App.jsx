@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       </header>
 
       <main>
-        <HeroSection />
+        {/*<HeroSection />*/}
+        <AboutSection />
       </main>
     </>
   );
