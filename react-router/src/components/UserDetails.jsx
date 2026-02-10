@@ -1,23 +1,34 @@
-import url1 from "../assets/1.jpg";
+import data from "../utils/data";
+import { useParams } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
 
-function UserDetailsSection() {
+function UserDetails() {
+  let { id } = useParams();
+
+  const d = data.find((emp) => emp.id === Number(id));
+
+  if (!d) {
+    return <ErrorPage />;
+  }
+
   return (
-    <div className="h-[80dvh] mx-20 mt-10">
+    <div className="min-h-[calc(100vh-56px)] px-20 pt-10 bg-sky-100">
       <h1 className="text-2xl tracking-widest text-sky-900 font-medium mb-3">
         EMPLOYEE DETAILS
       </h1>
-      <div className="grid grid-cols-[1fr_2fr] h-full">
-        <div className="bg-sky-300 flex flex-col items-center pt-10">
-          <img src={url1} alt="" className="rounded-full w-52 h-52" />
+
+      <div className="grid grid-cols-[1fr_2fr] min-h-[calc(100vh-140px)]">
+        <div className="bg-sky-300 flex flex-col rounded-t-md items-center pt-10">
+          <img src={d.avatar} alt="" className="rounded-full w-52 h-52" />
           <h3 className="text-2xl mt-5 font-medium leading-none text-sky-900">
-            Hobart Beynon
+            {d.first_name} {d.last_name}
           </h3>
-          <p className="text-slate-600 text-lg mt-1 mb-4">Engineer</p>
+          <p className="text-slate-600 text-lg mt-1 mb-4">{d.job_title}</p>
           <div className="flex gap-3">
             <a
               href="https://www.linkedin.com/"
               target="_blank"
-              className="bg-sky-200 rounded-md p-2"
+              className="bg-sky-200 hover:bg-sky-100 transition rounded-md p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +44,7 @@ function UserDetailsSection() {
             <a
               href="https://x.com/"
               target="_blank"
-              className="bg-sky-200 rounded-md p-2"
+              className="bg-sky-200 hover:bg-sky-100 transition rounded-md p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +60,7 @@ function UserDetailsSection() {
             <a
               href="https://secure.skype.com/"
               target="_blank"
-              className="bg-sky-200 rounded-md p-2"
+              className="bg-sky-200 hover:bg-sky-100 transition rounded-md p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +76,7 @@ function UserDetailsSection() {
           </div>
         </div>
 
-        <div className="ms-10">
+        <div className="ms-10 h-full">
           <div className="flex flex-col gap-10 mt-3">
             <h2 className="text-xl tracking-wide font-medium text-sky-950">
               PERSONAL INFORMATION
@@ -75,41 +86,41 @@ function UserDetailsSection() {
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   FIRST NAME:
                 </span>{" "}
-                <span>Hobart</span>
+                <span>{d.first_name}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   LAST NAME:
                 </span>{" "}
-                <span>Beynon</span>
+                <span>{d.last_name}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   CITY:
                 </span>{" "}
-                <span>Hernandez</span>
+                <span>{d.city}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   DATE OF BIRTH:
                 </span>{" "}
-                <span>19 April, 1996</span>
+                <span>{d.dob}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   EMAIL:
                 </span>{" "}
-                <span>hbeynon0@cornell.edu</span>
+                <span>{d.email}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   PHONE:
                 </span>{" "}
-                <span>917-127-5980</span>
+                <span>{d.phone}</span>
               </p>
             </div>
 
-            <hr className="border-2" />
+            <hr className="border-2 border-slate-300" />
 
             <h2 className="text-xl tracking-wide font-medium text-sky-950 ">
               EMPLOYMENT DETAILS
@@ -119,51 +130,57 @@ function UserDetailsSection() {
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   JOB TITLE:
                 </span>{" "}
-                <span>Engineer</span>
+                <span>{d.job_title}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   DEPARTMENT:
                 </span>{" "}
-                <span>Product Development</span>
+                <span>{d.department}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   ROLE:
                 </span>{" "}
-                <span>Senior Technical Lead</span>
+                <span>{d.role}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   EMPLOYMENT TYPE:
                 </span>{" "}
-                <span>Full-time</span>
+                <span>{d.type}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   EMPLOYMENT STATUS:
                 </span>{" "}
-                <span className="bg-green-200 text-green-800 text-sm font-medium rounded-full px-2 py-1">
-                  ● Active
+                <span
+                  className={
+                    d.status === "Active"
+                      ? "bg-green-200 text-green-800 text-sm font-medium rounded-full px-2 py-1"
+                      : "bg-red-200 text-red-800 text-sm font-medium rounded-full px-2 py-1"
+                  }
+                >
+                  ● {d.status}
                 </span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   SALARY:
                 </span>{" "}
-                <span>$108,780</span>
+                <span>{d.salary}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   DATE OF JOINING:
                 </span>{" "}
-                <span>29 September, 2023</span>
+                <span>{d.date}</span>
               </p>
               <p>
                 <span className="text-sm font-medium tracking-widest text-slate-500 me-2">
                   TENURE:
                 </span>{" "}
-                <span>2 years 4 months</span>
+                <span>{d.exp}</span>
               </p>
             </div>
           </div>
@@ -173,4 +190,4 @@ function UserDetailsSection() {
   );
 }
 
-export default UserDetailsSection;
+export default UserDetails;

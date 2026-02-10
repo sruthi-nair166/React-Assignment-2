@@ -1,19 +1,48 @@
+import { NavLink } from "react-router-dom";
+
 function NavBar() {
   return (
     <>
-      <nav className="flex justify-between items-center px-5 pt-3 shadow-md">
-        <a href="" className="pb-3">
+      <nav className="flex justify-between items-center bg-white px-5 pt-3 shadow-md relative z-20">
+        <NavLink to="/" className="pb-3">
           Logo
-        </a>
+        </NavLink>
         <ul className="flex gap-20">
-          <li className="text-sky-600 border-b-4 border-sky-600 pb-3">
-            <a href="">Home</a>
+          <li className="pb-3">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-sky-600 border-b-4 font-medium border-sky-600 pb-3"
+                  : "hover:text-sky-600 transition hover:font-medium text-black border-0"
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href="">About</a>
+            <NavLink
+              to="about"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-sky-600 border-b-4 font-medium border-sky-600 pb-3"
+                  : "hover:text-sky-600 transition hover:font-medium text-black border-0"
+              }
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <a href="">Users</a>
+            <NavLink
+              to="users"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-sky-600 border-b-4 font-medium border-sky-600 pb-3"
+                  : "hover:text-sky-600 transition hover:font-medium text-black border-0"
+              }
+            >
+              Users
+            </NavLink>
           </li>
         </ul>
 

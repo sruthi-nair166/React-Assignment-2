@@ -1,22 +1,15 @@
-import { useState } from "react";
-import "./App.css";
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Users from "./components/Users";
-import url1 from "./assets/1.jpg";
-import url2 from "./assets/2.jpg";
-import url3 from "./assets/3.jpg";
-import url4 from "./assets/4.jpg";
-import url5 from "./assets/5.jpg";
-import url6 from "./assets/6.jpg";
-import url7 from "./assets/7.jpg";
-import url8 from "./assets/8.jpg";
-import url9 from "./assets/9.jpg";
-import url10 from "./assets/10.jpg";
-import url11 from "./assets/11.jpg";
-import url12 from "./assets/12.jpg";
-import UserDetails from "./components/UserDetails";
+import url1 from "../assets/1.jpg";
+import url2 from "../assets/2.jpg";
+import url3 from "../assets/3.jpg";
+import url4 from "../assets/4.jpg";
+import url5 from "../assets/5.jpg";
+import url6 from "../assets/6.jpg";
+import url7 from "../assets/7.jpg";
+import url8 from "../assets/8.jpg";
+import url9 from "../assets/9.jpg";
+import url10 from "../assets/10.jpg";
+import url11 from "../assets/11.jpg";
+import url12 from "../assets/12.jpg";
 
 const data = [
   {
@@ -34,6 +27,7 @@ const data = [
     salary: "$108,780",
     department: "Product Development",
     role: "Senior Technical Lead",
+    type: "Full-time",
     status: "Active",
   },
   {
@@ -51,6 +45,7 @@ const data = [
     salary: "$70,646",
     department: "Research & Development",
     role: "Project Coordinator",
+    type: "Part-time",
     status: "Inactive",
   },
   {
@@ -68,6 +63,7 @@ const data = [
     salary: "$38,770",
     department: "Operations",
     role: "Front Desk Supervisor",
+    type: "Full-time",
     status: "Active",
   },
   {
@@ -85,6 +81,7 @@ const data = [
     salary: "$99,590",
     department: "Infrastructure & Planning",
     role: "Department HOD",
+    type: "Contract",
     status: "Active",
   },
   {
@@ -102,6 +99,7 @@ const data = [
     salary: "$55,170",
     department: "Marketing & Communications",
     role: "Junior Content Strategist",
+    type: "Full-time",
     status: "Active",
   },
   {
@@ -119,6 +117,7 @@ const data = [
     salary: "$81,200",
     department: "Marketing & Communications",
     role: "Director of Communications",
+    type: "Part-time",
     status: "Inctive",
   },
   {
@@ -136,6 +135,7 @@ const data = [
     salary: "$65,190",
     department: "Information & Knowledge Management",
     role: "Chief Archivist",
+    type: "Part-time",
     status: "Inactive",
   },
   {
@@ -153,6 +153,7 @@ const data = [
     salary: "$83,980",
     department: "Administration",
     role: "Operations Manager",
+    type: "Full-time",
     status: "Active",
   },
   {
@@ -170,6 +171,7 @@ const data = [
     salary: "$81,830",
     department: "Finance & Accounting",
     role: "Senior Risk Consultant",
+    type: "Full-time",
     status: "Active",
   },
   {
@@ -187,6 +189,7 @@ const data = [
     salary: "$94,400",
     department: "Health & Wellness",
     role: "Clinical Supervisor",
+    type: "Contract",
     status: "Inactive",
   },
   {
@@ -204,6 +207,7 @@ const data = [
     salary: "$70,080",
     department: "Sales & Business Development",
     role: "Regional Sales Lead",
+    type: "Part-time",
     status: "Active",
   },
   {
@@ -221,12 +225,9 @@ const data = [
     salary: "$52,440",
     department: "Executive Office",
     role: "Chief of Staff (Admin)",
+    type: "Full-time",
     status: "Active",
   },
 ];
 
-function App() {
-  return <></>;
-}
-
-export default App;
+export default data;
