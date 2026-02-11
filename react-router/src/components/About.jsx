@@ -8,7 +8,7 @@ function About() {
     >
       <div className="absolute z-0 inset-0 bg-blue-950/70"></div>
 
-      <Link to="/" className="text-sky-200 z-10">
+      <Link to="/" className="text-sky-200 absolute top-20 z-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

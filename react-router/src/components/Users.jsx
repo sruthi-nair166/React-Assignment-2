@@ -3,8 +3,25 @@ import data from "../utils/data";
 
 function Users() {
   return (
-    <div className="sm:px-20 px-10 py-10 bg-sky-100">
-      <h1 className="text-2xl tracking-widest sm:mb-10 mb-5 text-sky-900 font-medium">
+    <div className="sm:px-20 px-10 pt-5 pb-10 bg-sky-100">
+      <Link to="/" className="text-sky-700">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className="size-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+          />
+        </svg>
+      </Link>
+
+      <h1 className="text-2xl tracking-widest sm:mb-6 mt-5 mb-3 text-sky-900 font-medium">
         EMPLOYEE DIRECTORY
       </h1>
       <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5">
