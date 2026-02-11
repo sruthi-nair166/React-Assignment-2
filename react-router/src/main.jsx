@@ -1,5 +1,4 @@
 import "./index.css";
-import App from "./App.jsx";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
@@ -19,7 +18,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
       { path: "users", element: <Users /> },
-      { path: "users/details/:id", element: <UserDetails /> },
+      { path: "users/:id", element: <UserDetails /> },
     ],
   },
 ]);

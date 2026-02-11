@@ -1,6 +1,7 @@
 import data from "../utils/data";
 import { useParams } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
+import { Link } from "react-router-dom";
 
 function UserDetails() {
   let { id } = useParams();
@@ -12,13 +13,30 @@ function UserDetails() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-56px)] px-20 pt-10 bg-sky-100">
-      <h1 className="text-2xl tracking-widest text-sky-900 font-medium mb-3">
+    <div className="min-h-[calc(100vh-56px)] sm:px-20 px-10 pt-5 bg-sky-100">
+      <Link to="/users" className="text-sky-700">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className="size-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+          />
+        </svg>
+      </Link>
+
+      <h1 className="text-2xl tracking-widest text-sky-900 font-medium mt-5 mb-3">
         EMPLOYEE DETAILS
       </h1>
 
-      <div className="grid grid-cols-[1fr_2fr] min-h-[calc(100vh-140px)]">
-        <div className="bg-sky-300 flex flex-col rounded-t-md items-center pt-10">
+      <div className="grid lg:grid-cols-[1fr_2fr] min-h-[calc(100vh-140px)]">
+        <div className="bg-sky-300 flex flex-col rounded-md items-center py-10">
           <img src={d.avatar} alt="" className="rounded-full w-52 h-52" />
           <h3 className="text-2xl mt-5 font-medium leading-none text-sky-900">
             {d.first_name} {d.last_name}
@@ -77,7 +95,7 @@ function UserDetails() {
         </div>
 
         <div className="ms-10 h-full">
-          <div className="flex flex-col gap-10 mt-3">
+          <div className="flex flex-col gap-10 lg:mt-3 mt-8">
             <h2 className="text-xl tracking-wide font-medium text-sky-950">
               PERSONAL INFORMATION
             </h2>
@@ -161,7 +179,7 @@ function UserDetails() {
                       : "bg-red-200 text-red-800 text-sm font-medium rounded-full px-2 py-1"
                   }
                 >
-                  ● {d.status}
+                  ●{d.status}
                 </span>
               </p>
               <p>
