@@ -16,7 +16,7 @@
 
 ### Links
 
-Live Site: []()
+Live Site: [https://corporate-employee-portal.netlify.app/](https://corporate-employee-portal.netlify.app/)
 
 ### Screenshots
 
